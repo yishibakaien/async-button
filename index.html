@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async-botton</title>
+    <style>
+        button {
+            color: red
+        }
+        #btn[disabled] {
+            color: #999
+        }
+    </style>
+</head>
+<body>
+    <button id="btn"><span>click me</span></button>
+
+    <script>
+        // var a = new AsyncBtn('my name')
+        var btn = document.getElementById('btn')
+
+        btn.onclick = function() {
+            AsyncBtn(this).loading({
+                text: '正在加载中...'
+            })
+            setTimeout(() => {
+                AsyncBtn(this).end()
+            }, 1000)
+        }
+
+    </script>
+</body>
+</html>

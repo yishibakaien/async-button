@@ -1,0 +1,34 @@
+{
+  "name": "async-button",
+  "version": "0.0.1",
+  "description": "an async button",
+  "main": "./dist/asyncBtn.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config ./build/webpack.dev.config.js --progress --colors --inline",
+    "build": "node ./build/webapck.build.config.js"
+  },
+  "keywords": [
+    "button",
+    "async",
+    "ajax",
+    "disable",
+    "async-button"
+  ],
+  "author": "cloud-cb",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^4.15.0",
+    "eslint-loader": "^1.9.0",
+    "html-webpack-plugin": "^2.30.1",
+    "open-browser-webpack-plugin": "^0.0.5",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
+  }
+}
