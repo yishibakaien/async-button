@@ -1,7 +1,10 @@
-
+import { warn } from 'utils/debug'
 class AsyncBtn {
     constructor(btn) {
-        this.btn = btn
+        this.btn = typeof btn === 'string' ? document.querySelector(btn) : btn
+        if (!this.btn) {
+            warn('Can not resolve the dom')
+        }
         this.childNodes = btn.innerHTML
         this.btnCopy = btn.cloneNode(true)
     }
