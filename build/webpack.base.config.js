@@ -13,7 +13,7 @@ module.exports = {
     },
     output: {
         path: resolve('dist'),
-        filename: 'asyncBtn.js',
+        filename: process.env.NODE_ENV === 'dev' ? 'asyncBtn.js' : 'asyncBtn.min.js',
         chunkFilename: 'asyncBtn.js',
         library: 'AsyncBtn',
         libraryTarget: 'umd'
