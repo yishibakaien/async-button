@@ -1,4 +1,6 @@
-const path = require('path')
+const { resolve } = require('./utils')
+const devServerConfig = require('./dev-server.config.js')
+
 const open = require('open-browser-webpack-plugin')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
@@ -9,19 +11,19 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(webpackBaseConfig, {
     devServer: {
-        port: 4000,
-        host: '127.0.0.1',
+        port: devServerConfig.port,
+        host: devServerConfig.host,
         disableHostCheck: true,
         inline: true,
         hot: false,
         overlay: { // show eslint error message mask on html
             errors: true,
-            warnings: true,
+            warnings: true
         }
     },
     plugins: [
         new htmlWebpackPlugin({
-            template: path.resolve(__dirname, '../index.html'),
+            template: resolve('index.html'),
             filename: 'index.html',
             chunks: ['app'],
             inject: 'head'
@@ -30,7 +32,7 @@ module.exports = merge(webpackBaseConfig, {
             'process.env.NODE_ENV': JSON.stringify('dev')
         }),
         new open({
-            url: 'http://localhost:4000'
+            url: `http://${devServerConfig.host}:${devServerConfig.port}`
         })
     ]
 })

@@ -1,11 +1,7 @@
 
-const path = require('path')
+const { resolve } = require('./utils')
 
 const jsFileReg = /\.js$/
-
-function resolve(dir) {
-    return path.resolve(__dirname, '../' + dir)
-}
 
 module.exports = {
     entry: {
