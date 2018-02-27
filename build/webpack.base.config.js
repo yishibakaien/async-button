@@ -4,6 +4,7 @@ const { resolve } = require('./utils')
 const jsFileReg = /\.js$/
 
 module.exports = {
+
     entry: {
         app: resolve('src/index.js')
     },
